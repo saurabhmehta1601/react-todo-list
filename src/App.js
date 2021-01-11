@@ -11,6 +11,7 @@ function App() {
         <div className="row">
           <TodoInput />
           <TodoList />
+          <h5 style='color:red;'>Power of continuous deployment</h5>
         </div>
       </div>
     </div>
