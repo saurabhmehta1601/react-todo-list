@@ -32,13 +32,24 @@ export default class App extends Component {
     this.setState({
       items: [...this.state.items, newItem],
       item: "",
+      editItem:false
     });
   };
   handleDelete = (id) => {
-    const modifiedList = this.state.items.filter((item) => item.id != id);
+    const modifiedList = this.state.items.filter((item) => item.id !== id);
     this.setState({ items: modifiedList });
   };
-  handleEdit = (id) => {};
+  handleEdit = (id) => {
+    const modifiedList = this.state.items.filter((item) => item.id !== id);
+    const selectedItem = this.state.items.find((item) => item.id === id);
+
+    this.setState({
+      items: modifiedList,
+      item: selectedItem.title,
+      id: id,
+      editItem: true, 
+    });
+  };
   clearList = (e) => {
     this.setState({
       items: [],
