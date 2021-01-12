@@ -17,10 +17,22 @@ export default class App extends Component {
   };
 
   handleChange = (e) => {
-    console.log("handle change");
+    this.setState({
+      item: e.target.value
+    })
   };
+
   handleSubmit = (e) => {
-    console.log("handle submit");
+    e.preventDefault();
+
+    const newItem={
+      id:uuid(),
+      title:this.state.item
+    }
+    this.setState({
+      items:[...this.state.items,newItem],
+      item:""
+    })
   };
   handleDelete = (e) => {
     console.log("handle delete");
@@ -33,7 +45,7 @@ export default class App extends Component {
   };
 
   render() {
-    console.log(this.state);
+   
     return (
       <div>
         <div className="container">
