@@ -46,7 +46,12 @@ export default class App extends Component {
                 handleSubmit={this.handleSubmit}
                 editItem={this.state.editItem}
               />
-              <TodoList items={this.state.items} clearList={this.clearList} handleDelete={this.handleDelete} handleEdit={this.handleEdit}/>
+              <TodoList
+                items={this.state.items}
+                clearList={this.clearList}
+                handleDelete={this.handleDelete}
+                handleEdit={this.handleEdit}
+              />
             </div>
           </div>
         </div>
