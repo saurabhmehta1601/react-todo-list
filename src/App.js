@@ -8,8 +8,6 @@ import { v4 as uuid } from "uuid";
 export default class App extends Component {
   state = {
     items: [
-      { id: 1, title: "wake up " },
-      { id: 2, title: "brush teeth" },
     ],
     id: uuid(),
     item: "",
