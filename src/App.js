@@ -35,13 +35,14 @@ export default class App extends Component {
     });
   };
   handleDelete = (id) => {
-    console.log(`handle delete ${id}`);
+    const modifiedList = this.state.items.filter((item) => item.id != id);
+    this.setState({ items: modifiedList });
   };
-  handleEdit = (id) => {
-    console.log(`handle edit ${id}`);
-  };
+  handleEdit = (id) => {};
   clearList = (e) => {
-    console.log("clearlist");
+    this.setState({
+      items: [],
+    });
   };
 
   render() {
