@@ -18,34 +18,33 @@ export default class App extends Component {
 
   handleChange = (e) => {
     this.setState({
-      item: e.target.value
-    })
+      item: e.target.value,
+    });
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const newItem={
-      id:uuid(),
-      title:this.state.item
-    }
+    const newItem = {
+      id: uuid(),
+      title: this.state.item,
+    };
     this.setState({
-      items:[...this.state.items,newItem],
-      item:""
-    })
+      items: [...this.state.items, newItem],
+      item: "",
+    });
   };
-  handleDelete = (e) => {
-    console.log("handle delete");
+  handleDelete = (id) => {
+    console.log(`handle delete ${id}`);
   };
-  handleEdit = (e) => {
-    console.log("handle edit");
+  handleEdit = (id) => {
+    console.log(`handle edit ${id}`);
   };
   clearList = (e) => {
     console.log("clearlist");
   };
 
   render() {
-   
     return (
       <div>
         <div className="container">
